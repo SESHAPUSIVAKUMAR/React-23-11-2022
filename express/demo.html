@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<section id="emp" style="display: flex;">
+		
+	</section>
+	<script type="text/javascript">
+		fetch("http://localhost:4444/emp")
+		.then((res)=>{
+			console.log(res)
+		return res.json()
+		})
+		.then((jsonRes)=>{
+			console.log(jsonRes)
+			display(jsonRes)
+
+		})
+		function display(emp1)
+		{
+			
+				for(i=0;i<emp1.length;i++)
+				{
+					document.getElementById("emp").innerHTML+=`
+					<div>
+					<p>${emp1[i].name}</p>
+					<img src="${emp1[i].Avatar}"width="100%"/>
+					</div>
+					`
+				}
+		}
+	</script>
+	
+
+</body>
+</html>
